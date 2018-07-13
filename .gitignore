@@ -1,10 +1,17 @@
+# Hide irrelevant data
+
 out/**
 in/**
 debug/**
 .idea/**
 
+# Initialize the folders
+
 !out/blank.ini
 !in/blank.ini
 !debug/blank.ini
+!scansrc/blank.ini
+
+# Hide some exploits
 
 scansrc/**
