@@ -1,0 +1,10 @@
+out/**
+in/**
+debug/**
+.idea/**
+
+!out/blank.ini
+!in/blank.ini
+!debug/blank.ini
+
+scansrc/**
