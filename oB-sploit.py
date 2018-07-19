@@ -30,8 +30,8 @@ debugfile       = os.path.join(fileDir, 'debug/debug.txt')
 scansrc         = os.path.join(fileDir, 'scansrc/')
 
 mypath          = ''
-mypathWin       = home + "\\Projects\\github-oB-sploit\\in\\"
-mypathMac       = home + "/Projects/github-oB-sploit/in/"
+mypathWin       = home + "\\Projects\\gh-oB-sploit\\in\\"
+mypathMac       = home + "/Projects/gh-oB-sploit/in/"
 targets         = []
 fileCount       = int(0)
 conf            = {}
@@ -208,7 +208,7 @@ def outbound():
     return
 
 def scan(t): # Runs each scan on target 't'.
-    '''This is where the magic happens.'''
+    ''' If the scan is set to True, send to scan# and target (s,t) to scan select. '''
     for s in conf['scans']:
         if conf['scans'][s] == 'True':
             if debugSet == True:
@@ -219,13 +219,13 @@ def scan(t): # Runs each scan on target 't'.
     return
 
 def scanselect(s,t):
+    ''' Select the scan with the switcher, send target to the scan. '''
     switcher = {
         'scan1': int(1),
         'scan2': int(2),
         'scan3': int(3)   #Add more scans here
     }
     y=(switcher[s])
-    #print ('run scan ' + str(y) + ' on ' + t)
     if y == 1:
         print('Launching scan1 on ' + t)
         scan1(t)
@@ -240,7 +240,7 @@ def scanselect(s,t):
     return
 
 
-def scan1(x): # 'Quick' scan on target IP using nmap.
+def scan1(x): # WebLogic Remote Code Execution (RCE) - Under development
     y = 'Begin scan1 on ' + x
     scan1target = ['nmap', '-T4', '-F', x]
     '''
@@ -251,6 +251,12 @@ def scan1(x): # 'Quick' scan on target IP using nmap.
     # open listening port/socket or some sort of notification that confirmation is received.
     # does this need to be multi-threaded?
     # perform exploit
+
+    # PLACEHOLDER BELOW RUNS NMAP SCAN, NOT AN EXPLOIT
+    #result = subprocess.run(scan1target, stdout=subprocess.PIPE)
+    #scanresults.append(result.stdout.decode('utf-8'))
+
+
 
     return y
 
