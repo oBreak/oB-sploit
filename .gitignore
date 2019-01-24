@@ -15,3 +15,7 @@ debug/**
 # Hide some exploits
 
 scansrc/**
+
+# Hide internal notes
+
+..notes.md
